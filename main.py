@@ -29,7 +29,7 @@ def start_handler(message):
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
     if(message.text == 'Получить все заголовики'): #если нажата данная кнокпа с текстом
-        m = bot.send_message(message.chat.id, text=f'Введите ключевое слово или словосочетание и черезе запятую кол-во старниц:', parse_mode= "Markdown") #записываем в перменную m данное сообщение
+        m = bot.send_message(message.chat.id, text=f'Введите ключевое слово или словосочетание:', parse_mode= "Markdown") #записываем в перменную m данное сообщение
         bot.register_next_step_handler(m,getTitleName)  #регистрируем след сообщение от пользвоателя в функции getTitleName
 
     elif(message.text == 'Получить конкретный пост'):
